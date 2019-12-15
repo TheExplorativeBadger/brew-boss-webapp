@@ -1,0 +1,1696 @@
+﻿/* This file is to override the Bootstrap default CSS */
+
+body {
+    background-color: black;
+}
+
+h1 {
+    color: yellow;
+}
+
+.popover-header {
+    text-align: center;
+    /*border-bottom: 1px solid white;*/
+    padding-top: 5px;
+    padding-bottom: 0px;
+    padding-left: 0px;
+    padding-right: 0px;
+    background-color: black;
+    color: white;
+    border: 1px solid white;
+}
+
+.popover-body {
+    background-color: black;
+    color: white;
+    border: 1px solid white;
+    border-top: none;
+}
+
+#AccuFillPopoverRow1 {
+    Width: 100%;
+    margin: 0px;
+    border-bottom: 1px dotted white;
+}
+
+#AccuFillPopoverRow2 {
+    Width: 100%;
+    margin: 0px;
+    margin-top: 5px;
+}
+
+#AccuFillPopoverRow1Col1 {
+    width: 50%;
+    padding-left: 5px;
+    padding-right: 5px;
+    text-align: center;
+}
+
+#AccuFillPopoverRow1Col2 {
+    width: 50%;
+    padding-left: 5px;
+    padding-right: 5px;
+    text-align: center;
+}
+
+#AccuFillPopoverRow2Col1 {
+    width: 50%;
+    padding-left: 5px;
+    padding-right: 5px;
+    text-align: center;
+}
+
+#AccuFillPopoverRow2Col2 {
+    width: 50%;
+    padding-left: 5px;
+    padding-right: 5px;
+    text-align: center;
+}
+
+#AccuFillPopoverListLeft {
+    list-style-type: none;
+    padding-inline-start: 0px;
+}
+
+#AccuFillPopoverListRight {
+    list-style-type: none;
+    padding-inline-start: 0px;
+}
+
+#AccuFillStatusWindow {
+    text-align: center;
+    margin-top: 5px;
+}
+
+#AccuFillStatusHeader {
+    border-bottom: 1px solid white;
+}
+
+#AccuFillStatusValue {}
+
+#AccuFillCalibrationWindow {
+    text-align: center;
+    margin-top: 5px;
+}
+
+#AccuFillCalibrationHeader {
+    border-bottom: 1px solid white;
+}
+
+#AccuFillCalibrationValue {}
+
+#AccuFillDesiredFillVolumeWindow {
+    text-align: center;
+    margin-top: 5px;
+}
+
+#AccuFillDesiredFillVolumeHeader {
+    border-bottom: 1px solid white;
+}
+
+#AccuFillDesiredFillVolumeValue {}
+
+#AccuFillDesiredFillVolumeValueUnits {}
+
+#AccuFillVolumeFilledWindow {
+    text-align: center;
+    margin-top: 5px;
+}
+
+#AccuFillVolumeFilledHeader {
+    border-bottom: 1px solid white;
+}
+
+#AccuFillVolumeFilledValue {}
+
+#AccuFillVolumeFilledValueUnits {}
+
+#AccuFillChangeFillVolumeInput {
+    width: 50%;
+    margin-top: 7px;
+    color: white;
+    background-color: black;
+    border: none;
+    border-bottom: 1px solid white;
+}
+
+#AccuFillActionButton {
+    background-color: #eac922;
+    border: 1px solid black;
+    cursor: pointer;
+    height: 40px;
+    width: 50px;
+    border-radius: .25rem;
+}
+
+#AlertMessageBox {
+    display: none;
+}
+
+#SaveStepsAsDialogBox {
+    display: none;
+}
+
+#Main_Navbar {
+    background-color: black;
+    border-bottom: 1px solid white;
+    /*height: 60px;*/
+}
+
+#Preferences_Navbar {
+    background-color: black;
+    border-bottom: 1px solid purple;
+}
+
+.nav-item {
+    background-color: black;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    /*margin-left: 2.5px;
+    margin-right: 2.5px;
+    border-bottom: 1px solid white;*/
+    border-left: 1px solid white;
+    border-right: 1px solid white;
+    border-bottom-color: white;
+}
+
+#NavItemM1 {
+    /*border-bottom-color: white;*/
+    border-bottom-style: solid;
+    border-bottom-width: 1px;
+}
+
+#NavItemM2 {
+    /*border-bottom-color: white;*/
+    border-bottom-style: none;
+    border-bottom-width: 1px;
+}
+
+#NavItemM3 {
+    /*border-bottom-color: white;*/
+    border-bottom-style: none;
+    border-bottom-width: 1px;
+}
+
+#NavItemS1 {
+    /*border-bottom-color: white;*/
+    border-bottom-style: solid;
+    border-bottom-width: 1px;
+}
+
+#NavItemS2 {
+    /*border-bottom-color: white;*/
+    border-bottom-style: none;
+    border-bottom-width: 1px;
+}
+
+#NavItemS3 {
+    /*border-bottom-color: white;*/
+    border-bottom-style: none;
+    border-bottom-width: 1px;
+}
+
+#NavItemS4 {
+    /*border-bottom-color: white;*/
+    border-bottom-style: none;
+    border-bottom-width: 1px;
+}
+
+.navbar-dark .navbar-toggler-icon {
+    /*background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(234, 204, 4, 1)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");*/
+}
+
+#Main_Toggler {
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(234, 204, 4, 1)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+    /*background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(108, 117, 125, 1)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");*/
+}
+
+#Preferences_Toggler {
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(24, 173, 103, 1)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+}
+
+.navbar-dark .navbar-nav .nav-link {
+    color: white;
+}
+
+.nav-link {
+    cursor: pointer;
+}
+
+#Brewing_Steps_Container {
+    display: none;
+    border: 1px solid purple;
+    border-top: none;
+    margin-top: 20px;
+    max-width: 1400px;
+    min-width: 1250px;
+}
+
+#Settings_Container {
+    display: none;
+    border: 1px solid purple;
+    margin-top: 20px;
+}
+
+#BrewBoss_History_Container {
+    display: none;
+    border: 1px solid white;
+    margin-top: 20px;
+}
+
+#Contact_Us_Container {
+    display: none;
+    border: 1px solid white;
+    margin-top: 20px;
+}
+
+#Current_Brew_Session_Container_Heading {
+    width: 235px;
+    margin-top: 15px;
+    color: white;
+    /*border: 1px solid white;*/
+}
+
+.container {
+    /*margin-left: 5px;
+    margin-right: 15px;*/
+}
+
+.Sub_Window_Heading {
+    color: rgba(24, 173, 103, 1);
+    text-align: center;
+    border-bottom: 1px solid white;
+}
+
+#Current_Brew_Session_Container {
+    min-width: 744px;
+    border: 1px solid white;
+    margin-top: 20px;
+    max-width: 1200px;
+    height: auto;
+}
+
+.Stat_Display_Window {
+    /*border: 1px solid white;*/
+    margin: 0 auto;
+    width: 100px;
+    height: 90px;
+    line-height: 90px;
+    text-align: center;
+    vertical-align: middle;
+    margin-bottom: 5px;
+}
+
+.Stat_Header {
+    color: white;
+    border-bottom: 1px solid white;
+    text-align: center;
+    margin-top: 5px;
+    margin-bottom: 4px;
+}
+
+#HopsBoss_Pos {
+    color: white;
+    font-size: 1.25rem;
+    font-weight: 500;
+}
+
+#Current_Brew_Session_Container_Prompt_Window {
+    color: white;
+    border: 1px solid white;
+    padding-left: 5px;
+    padding-right: 5px;
+    margin-top: 8px;
+    font-size: large;
+    min-height: 40px;
+    text-align: center;
+}
+
+#Window_1_B_1_a {
+    border: 1px solid white;
+    border-right: none;
+    border-left: none;
+    height: 339px;
+}
+
+#HeaterPowerDisplay {
+    margin-top: 15px;
+    text-align: left;
+    color: white;
+    margin-bottom: 23px;
+    font-size: 1.40rem;
+}
+
+#Heater_Power_Display {
+    border: none;
+    border-bottom: 1px solid white;
+    margin-left: 0px;
+    font-size: 1.15rem;
+    background-color: black;
+    width: 48px;
+    color: white;
+}
+
+#Heater_Power_Slider {
+    height: 12.79px;
+    margin-bottom: 20px;
+}
+
+#Override_Span {
+    display: none;
+    /*width: 35px;*/
+    font-size: .75rem;
+    margin-left: 4px;
+}
+
+.ui-widget-content {
+    background: white;
+}
+
+.ui-widget-header {
+    background: white;
+}
+
+.ui-widget.ui-widget-content {
+    border: 1px solid black;
+}
+
+.ui-state-default,
+.ui-widget-content .ui-state-default {
+    border: 1px solid black;
+    background: white;
+}
+
+.ui-slider .ui-slider-handle {
+    top: -.55em;
+    width: 1.7em;
+    height: 1.7em;
+}
+
+#Controller_Button_List {
+    margin-top: 15px;
+    margin-bottom: 16px;
+    color: white;
+    list-style-type: none;
+    text-align: left;
+    padding-left: 0px;
+    font-size: 1.50rem;
+    font-weight: 500;
+}
+
+#Heater_Button {
+    margin-bottom: 20px;
+}
+
+#Pump_Button {
+    margin-bottom: 20px;
+}
+
+#Heater_Switch {
+    position: relative;
+    display: inline-block;
+    width: 52px;
+    height: 35px;
+}
+
+
+/* Hide default HTML checkbox */
+
+#Pump_Switch {
+    position: relative;
+    display: inline-block;
+    width: 100px;
+    height: 35px;
+}
+
+
+/* Hide default HTML checkbox */
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+
+/* The slider */
+
+#Heater_Switch_Slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 2px;
+    right: 0;
+    bottom: 0;
+    height: 35px;
+    margin-top: 5px;
+}
+
+#Pump_Switch_Slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0px;
+    left: 12.39px;
+    right: 36.61px;
+    bottom: 0;
+    height: 35px;
+    margin-top: 5px;
+}
+
+.slider {
+    background-color: #818181;
+    -webkit-transition: .1s;
+    transition: .1s;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 25px;
+    width: 25px;
+    left: 0px;
+    bottom: 5px;
+    background-color: white;
+    -webkit-transition: .1s;
+    transition: .1s;
+}
+
+input:checked+.slider {
+    background-color: green;
+}
+
+input:focus+.slider {
+    box-shadow: 0 0 1px #2196F3;
+}
+
+input:checked+.slider:before {
+    -webkit-transform: translateX(25px);
+    -ms-transform: translateX(25px);
+    transform: translateX(25px);
+}
+
+
+/* Rounded sliders */
+
+.slider.round {
+    border-radius: 34px;
+}
+
+.slider.round:before {
+    border-radius: 50%;
+}
+
+#None_Accessory_List {
+    /*display: none;*/
+    margin-top: 15px;
+    padding-left: 0px;
+    padding-top: 5px;
+    color: white;
+    height: 87px;
+    list-style-type: none;
+    text-align: left;
+    font-size: 1.25rem;
+    font-weight: 500;
+}
+
+#Hops_Boss_Accessory_List {
+    display: none;
+    margin-top: 15px;
+    padding-left: 0px;
+    padding-top: 5px;
+    color: white;
+    height: 87px;
+    list-style-type: none;
+    text-align: left;
+    font-size: 1.25rem;
+    font-weight: 500;
+}
+
+#HopsBossPositionRow {
+    margin-top: 10px;
+}
+
+#AccuFill_Accessory_List {
+    display: none;
+    margin-top: 15px;
+    padding-left: 0px;
+    padding-top: 5px;
+    color: white;
+    height: 87px;
+    list-style-type: none;
+    text-align: left;
+    font-size: 1.20rem;
+    font-weight: 500;
+    margin-bottom: 0px;
+}
+
+#AccuFill_Popup_List {
+    list-style-type: none;
+    text-align: left;
+    padding-left: 0px;
+}
+
+#AccuFillPopoverButton {
+    background-color: #eac922;
+    color: black;
+    margin-left: 15px;
+    width: 50px;
+}
+
+#HopsBossPopoverButton {
+    background-color: #eac922;
+    color: black;
+    margin-left: 15px;
+    width: 50px;
+}
+
+#AccuFillProgressBarRow {
+    height: 55px;
+    text-align: center;
+}
+
+#AccuFillProgressBarColumn {
+    width: 75%;
+    height: 100%;
+    padding-right: 0px;
+    text-align: center;
+    padding-left: 15px;
+    padding-top: 9px;
+}
+
+#AccuFillProgressBar {
+    width: 100%;
+    height: 30px;
+}
+
+#AccuFillInfoColumn {
+    width: 25%;
+    padding-top: 9px;
+    padding-left: 11px;
+}
+
+#AccuFillFillVolume {
+    margin-left: 5px;
+    font-size: 1rem;
+}
+
+#Window_1_B_1_b {
+    text-align: center;
+    height: 188px;
+    border-bottom: 1px solid black;
+}
+
+#Step_To_Start_Select {
+    border: 1px solid black;
+    width: 120px;
+}
+
+#CurrentStepNumberDiv {
+    display: none;
+    text-align: center;
+    /*font-size: 1rem;
+    font-weight: 500;*/
+}
+
+#CurrentStepHeaderSpan {
+    border-bottom: 1px solid white;
+}
+
+#Start_Brewing_Button {
+    width: 75px;
+    position: absolute;
+    bottom: 58px;
+    left: 15px;
+    margin-bottom: 5px;
+    display: inline-block;
+}
+
+#Stop_Brewing_Button {
+    width: 75px;
+    display: none;
+    position: absolute;
+    bottom: 5px;
+    left: 15px;
+    margin-bottom: 7px;
+    /*display: inline-block;*/
+}
+
+#New_Graph_Button {
+    color: black;
+    background-color: #eac922;
+    border-color: black;
+    position: absolute;
+    bottom: 5px;
+    left: 15px;
+    margin-bottom: 7px;
+}
+
+#Gauges_Row {
+    height: 260px;
+    min-width: 744px;
+    border-left: 1px solid white;
+    border-top: 1px solid white;
+}
+
+#Hour_Column {
+    width: 33%
+}
+
+#Hour_Value_Column {
+    width: 33%;
+    height: 100%;
+    line-height: 1;
+}
+
+#HR_Value_Span {
+    /*margin-top: -10px;*/
+    font-size: 4.25rem;
+    line-height: 1;
+}
+
+#Hour_Select_Column {
+    width: 33%
+}
+
+#Timer_Hour_Select {
+    height: 33px;
+}
+
+#Min_Column {
+    width: 33%;
+}
+
+#Min_Value_Column {
+    width: 33%;
+    height: 100%;
+    line-height: 1;
+}
+
+#MIN_Value_Span {
+    /*margin-top: -10px;*/
+    font-size: 4.25rem;
+    line-height: 1;
+}
+
+#Min_Select_Column {
+    width: 33%;
+}
+
+#Timer_Min_Select {
+    height: 33px;
+}
+
+#Sec_Column {
+    width: 33%;
+}
+
+#Sec_Value_Column {
+    width: 33%;
+    height: 100%;
+    line-height: 1;
+}
+
+#SEC_Value_Span {
+    /*margin-top: -10px;*/
+    font-size: 4.25rem;
+    line-height: 1;
+}
+
+#Sec_Select_Column {
+    width: 33%;
+}
+
+#Timer_Sec_Select {
+    height: 33px;
+}
+
+#Temperature_Row {
+    padding-right: 15px;
+}
+
+#Time_Remaining_Gauge {
+    text-align: center;
+    width: 100%;
+    display: inline-block;
+}
+
+#Time_Remaining_Gauge_Window {
+    min-width: 370.5px;
+    width: 50%;
+    display: inline-block;
+    /*text-align: center;*/
+}
+
+#Temperature_Gauge_Window {
+    min-width: 370.5px;
+    text-align: center;
+    width: 50%;
+    display: inline-block;
+    /*text-align: center;*/
+}
+
+#Time_Remaining_Canvas_Div {
+    width: 100%;
+    padding-left: 15px;
+}
+
+#Temperature_Canvas_Div {
+    width: 60%;
+    padding-left: 0px;
+}
+
+#Current_Temperature {
+    color: white;
+    font-size: 2.75rem;
+}
+
+#Step_Setpoint {
+    color: white;
+    font-size: xx-large;
+}
+
+#Time_Remaining {
+    color: white;
+    font-size: xx-large;
+    width: 140px;
+}
+
+#Time_Remaining_List {
+    margin-top: 10px;
+    margin-bottom: 16px;
+    color: white;
+    list-style-type: none;
+    text-align: left;
+    padding-left: 0px;
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+#Time_Remaining_Header_Row {
+    margin-top: 1px;
+    color: white;
+    font-size: 1.75rem;
+}
+
+#Time_Remaining_Value_Row {
+    /*height: 65px;*/
+    margin-top: 5px;
+    color: white;
+}
+
+#Time_Remaining_Display {
+    margin-top: 10px;
+    margin-bottom: 16px;
+    color: white;
+    list-style-type: none;
+    text-align: left;
+    font-weight: 500;
+}
+
+#Time_Remaining_Display_Title_Row {
+    font-size: 1.5rem;
+}
+
+#Time_Remaining_Display_Value_Row {
+    font-size: 1.5rem;
+}
+
+#Time_Remaining_Select_Row {
+    margin-top: 20px;
+}
+
+#Time_Remaining_Row {}
+
+#HR_Title_Span {
+    border-bottom: 1px solid white;
+}
+
+#HR_Span {
+    margin-right: 10px;
+}
+
+#MIN_Title_Span {
+    border-bottom: 1px solid white;
+}
+
+#MIN_Span {
+    margin-right: 10px;
+}
+
+#SEC_Title_Span {
+    border-bottom: 1px solid white;
+}
+
+#SEC_Span {}
+
+#Temperature_List {
+    margin-top: 25px;
+    margin-bottom: 16px;
+    color: white;
+    list-style-type: none;
+    text-align: center;
+    padding-left: 0px;
+    font-size: 1.35rem;
+    font-weight: 500;
+}
+
+#Time_Remaining_Side_Options {
+    text-align: center;
+    display: inline-block;
+    height: 218px;
+    width: 40%;
+    padding-left: 5px;
+}
+
+#IncreaseByOneMinute {
+    width: 90px;
+    height: 45px;
+    margin-top: 25px;
+    margin-left: 15px;
+    background-color: #eac922;
+    border: 1px solid black;
+}
+
+#DecreaseByOneMinute {
+    width: 90px;
+    height: 45px;
+    margin-top: 25px;
+    margin-left: 15px;
+    background-color: #eac922;
+    border: 1px solid black;
+}
+
+#Target_Temp_List_Item {
+    margin-top: 6px;
+    text-align: center;
+}
+
+#ClearTargetTempButton {
+    margin-top: 10px;
+    height: 36px;
+    background-color: #eac922;
+    border: 1px solid black;
+    margin-right: 7px;
+}
+
+#Temperature_Side_Options {
+    display: inline-block;
+    text-align: center;
+    height: 218px;
+    width: 40%;
+    padding-right: 0px;
+    padding-left: 5px;
+}
+
+#Target_Temperature_Select {
+    border: 1px solid black;
+    height: 35px;
+    margin-left: -10px;
+}
+
+#Window_1_B_2_b {
+    border-left: 1px solid white;
+    border-top: 1px solid white;
+    height: 305px;
+}
+
+#Window_1_B_2_b_1 {
+    /*border: 1px solid purple;*/
+    height: 100%;
+    width: 100%;
+    padding-left: 0px;
+    padding-right: 0px;
+}
+
+#Chart_Container {
+    position: relative;
+    /*outline: 1px solid white;*/
+    height: 100%;
+    width: 100%;
+}
+
+#Temperature_Chart {
+    height: 304px;
+    width: 896.75px;
+}
+
+#Stats_Display_Row {
+    border-top: 1px solid white;
+    border-left: 1px solid white;
+    height: 0px;
+}
+
+#Brew_Stats_List {
+    padding-left: 0px;
+    padding-top: 12px;
+    font-size: .95rem;
+    font-weight: 500;
+    text-align: left;
+    color: white;
+    list-style-type: none;
+}
+
+#Elapsed_Brew_Time_Window {
+    text-align: center;
+}
+
+#Total_KWH_Used_Window {
+    margin-top: 10px;
+    text-align: center;
+}
+
+#Total_Brewing_Cost_Window {
+    text-align: center;
+    margin-top: 10px;
+}
+
+#Elapsed_Brew_Time_Title {
+    border-bottom: 1px solid white;
+}
+
+#Total_KWH_Used_Title {
+    border-bottom: 1px solid white;
+}
+
+#Total_Brewing_Cost_Title {
+    border-bottom: 1px solid white;
+}
+
+#Elapsed_Brew_Time_Span {
+    margin-top: 5px;
+}
+
+#Total_KWH_Used_Span {
+    margin-top: 7px;
+}
+
+#Total_Brewing_Cost_Span {
+    margin-top: 7px;
+}
+
+#Brew_Session_List {
+    color: white;
+    list-style-type: none;
+    text-align: center;
+    padding-left: 0px;
+    padding-top: 5px;
+    font-size: 1.25rem;
+    font-weight: 500;
+}
+
+#Window_1_B_1_b_1 {
+    height: 100%;
+    width: 58.3%;
+    padding-right: 0px;
+}
+
+#Target_Temperature_Select {
+    border: 1px solid black;
+}
+
+#Window_1_B_1_b_2 {
+    height: 100%;
+    width: 41.7%;
+    padding-left: 5px;
+}
+
+table#Brewing_Steps_Table {
+    padding: auto;
+    margin: auto;
+}
+
+#Window_2_A_1 {
+    border-top: 1px solid purple;
+}
+
+#Brewing_Steps_Heading {
+    margin-top: 15px;
+    margin-bottom: 15px;
+    border-bottom: 1px solid purple;
+    color: yellow;
+    padding-bottom: 15px;
+}
+
+#Brew_Steps_Description {
+    margin-top: 10px;
+    margin-left: 10px;
+    color: rgba(24, 173, 103, 1);
+    border-bottom: 1px solid white;
+    padding-bottom: 15px;
+}
+
+#Current_Step_File {
+    color: white;
+}
+
+#Import_BeerXML_Description {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-left: 10px;
+    color: rgba(24, 173, 103, 1);
+}
+
+#Import_BeerXML_File {
+    margin-top: 10px;
+    color: white;
+    background-color: black;
+    margin-left: 10px;
+    width: 280px;
+}
+
+#Import_BeerXML_Button {
+    color: black;
+    background-color: #eac922;
+    border-color: black;
+    margin-left: 10px;
+    margin-top: 8px;
+}
+
+#Brew_Steps_Save_Description {
+    margin-top: 15px;
+    margin-left: 10px;
+    color: rgba(24, 173, 103, 1);
+    border-top: 1px solid white;
+    padding-top: 15px;
+}
+
+#Save_Steps_Button {
+    color: black;
+    background-color: #eac922;
+    border-color: black;
+    margin-left: 10px
+}
+
+#Brew_Steps_SaveAs_Description {
+    margin-top: 15px;
+    margin-left: 10px;
+    color: rgba(24, 173, 103, 1);
+    border-top: 1px solid white;
+    padding-top: 15px;
+}
+
+#SaveAs_Steps_Button {
+    color: black;
+    background-color: #eac922;
+    border-color: black;
+    margin-left: 10px;
+}
+
+#NewFileName {
+    color: white;
+    background-color: #000000;
+    margin-left: 10px;
+    border: none;
+    border-bottom: 1px solid white;
+    margin-bottom: 8px;
+}
+
+#Brew_Steps_Load_Description {
+    margin-top: 15px;
+    padding-top: 15px;
+    margin-left: 10px;
+    color: rgba(24, 173, 103, 1);
+    border-top: 1px solid white;
+}
+
+#Load_Steps_File_List {
+    margin-left: 10px;
+    margin-bottom: 8px;
+    height: 35px;
+}
+
+#Load_Steps_Button {
+    color: black;
+    background-color: #eac922;
+    border-color: black;
+    margin-bottom: 8px;
+    margin-left: 10px;
+}
+
+#Brew_Steps_Delete_Description {
+    margin-top: 15px;
+    padding-top: 15px;
+    margin-left: 10px;
+    color: rgba(24, 173, 103, 1);
+    border-top: 1px solid white;
+}
+
+#Delete_Steps_File_List {
+    margin-left: 10px;
+    margin-bottom: 8px;
+    height: 35px;
+}
+
+#Delete_Steps_Button {
+    color: black;
+    background-color: red;
+    font-weight: bold;
+    border-color: black;
+    margin-bottom: 15px;
+    margin-left: 10px;
+}
+
+.BrewStepsCheckbox {
+    transform: scale(1.35);
+    -ms-transform: scale(1.35);
+    -webkit-transform: scale(1.35);
+}
+
+.Settings_Checkbox {
+    margin-left: 5px;
+    transform: scale(1.35);
+    -ms-transform: scale(1.35);
+    -webkit-transform: scale(1.35);
+}
+
+.TempUnitsRadio {
+    transform: scale(1.35);
+    -ms-transform: scale(1.35);
+    -webkit-transform: scale(1.35);
+    margin-left: 5px;
+}
+
+.StepTypeSelect {
+    width: 50px;
+}
+
+#Window_2_A_2 {
+    border-left: 1px solid purple;
+    border-top: 1px solid purple;
+}
+
+.Sub_Setting_Heading {
+    color: yellow;
+    text-align: center;
+    border-bottom: 1px solid white;
+}
+
+#Brewing_Parameters_Container_Heading {
+    color: yellow;
+    /*border: 1px solid white;*/
+}
+
+#Brewing_Parameters_Container_Tabs {
+    color: yellow;
+    border: 1px solid white;
+}
+
+#Window_3_A_1 {
+    border-right: 1px solid purple;
+    /*height: 500px;*/
+    color: yellow;
+}
+
+#Save_Settings_Description {
+    margin-top: 10px;
+    margin-left: 10px;
+    color: rgba(24, 173, 103, 1);
+}
+
+#Save_Settings_Button {
+    color: black;
+    background-color: #eac922;
+    border-color: black;
+    vertical-align: bottom;
+    margin-bottom: 7px;
+}
+
+#Reset_Default_Settings_Button {
+    color: black;
+    background-color: #eac922;
+    border-color: black;
+    vertical-align: bottom;
+}
+
+.Pref_Number {
+    text-align: right;
+    background: #000000;
+    width: 15%;
+    border: none;
+    border-bottom: 1px solid white;
+    color: white;
+}
+
+#Window_3_A_2_a {
+    min-height: 515px;
+}
+
+#General_Pref_List {
+    list-style-type: none;
+    color: yellow;
+    margin-top: 20px;
+    margin-bottom: 5px;
+    display: inline-block;
+    float: none;
+}
+
+#Auto_Brew_Mode_Value {
+    color: red;
+}
+
+#F_Value {
+    color: white;
+}
+
+#C_Value {
+    color: white;
+}
+
+#DefaultStepFile {
+    color: white;
+    border-bottom: 1px solid white;
+}
+
+#Default_BrewSteps_Select {
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+.Setting_Description {
+    color: rgba(24, 173, 103, 1);
+}
+
+.Settings_List {
+    list-style-type: none;
+    color: yellow;
+    margin-top: 20px;
+    display: inline-block;
+    float: none;
+    padding-left: 0px;
+}
+
+#Default_Step_File_Preference_Description {
+    color: rgba(24, 173, 103, 1);
+}
+
+#Temperature_Units_Preference_Description {
+    color: rgba(24, 173, 103, 1);
+}
+
+#Window_3_A_2_b {
+    display: none;
+    min-height: 500px;
+}
+
+.Controllers_Pref_List {
+    list-style-type: none;
+    color: yellow;
+    margin-top: 20px;
+    display: inline-block;
+    float: none;
+}
+
+#HBC_Enabled_Value {
+    color: red;
+}
+
+#Window_3_A_2_b {
+    display: none;
+    min-height: 500px;
+    color: yellow;
+}
+
+#Window_b_List {
+    list-style-type: none;
+    color: yellow;
+    margin-top: 20px;
+}
+
+#DeltaT1_Description {
+    color: rgba(24, 173, 103, 1);
+}
+
+#DeltaT2_Description {
+    color: rgba(24, 173, 103, 1);
+}
+
+#PwrS_Description {
+    color: rgba(24, 173, 103, 1);
+}
+
+#PwrL_Description {
+    color: rgba(24, 173, 103, 1);
+}
+
+#PwrM_Description {
+    color: rgba(24, 173, 103, 1);
+}
+
+#PwrB_Description {
+    color: rgba(24, 173, 103, 1);
+}
+
+#Heater_Watts {}
+
+#CPKWH_Description {
+    margin-bottom: 10px;
+}
+
+#HBMSCC_Description {
+    margin-bottom: 10px;
+}
+
+#BeerXMLImportAccordian {
+    width: 98%;
+    margin-bottom: 5px;
+}
+
+#BeerXMLImportCard {
+    background-color: black;
+    height: 50%;
+}
+
+#BeerXMLImportCardHeader {
+    padding-left: 0px;
+    padding-top: 0px;
+    padding-right: 0px;
+    padding-bottom: 0px;
+    height: 50%;
+    border: 1px solid purple;
+}
+
+#BeerXMLImportFiller {
+    height: 50%;
+}
+
+#BeerXMLImportButton {
+    color: white;
+    background-color: black;
+    height: 40px;
+    margin-bottom: 5px;
+    width: 98%;
+    padding-left: 0px;
+    text-align: center;
+    box-shadow: none;
+    font-weight: 500;
+    font-size: 1.25rem;
+}
+
+#BeerXMLImportCollapse {
+    border-left: 1px dashed red;
+    border-bottom: 1px dashed red;
+    border-right: 1px dashed red;
+}
+
+#BeerXMLImportCardBody {
+    color: white;
+    margin-bottom: 5px;
+    height: 100%;
+    padding-top: 10px;
+    padding-bottom: 5px;
+    padding-left: 12px;
+    padding-right: 15px;
+}
+
+#BeerXMLImportPrefList {
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+
+#Window_3_A_2_d {
+    display: none;
+    min-height: 500px;
+}
+
+#Window_3_A_2_e {
+    display: none;
+    min-height: 500px;
+}
+
+#UserEmail {
+    color: white;
+    background-color: black;
+    border: none;
+    border-bottom: 1px solid white;
+}
+
+#Sound_List {
+    padding-right: 15px;
+}
+
+#Update_Interval_Select {
+    height: 25px;
+}
+
+table#Brewing_Steps_Table th {
+    font: yellow;
+    font-size: 15px;
+    color: yellow;
+    text-align: left;
+    border-top: none;
+    border-bottom: 1px solid purple;
+}
+
+table#Brewing_Steps_Table td {
+    color: white;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+.table-editable {
+    .oi {
+        font-size: 10px;
+    }
+}
+
+.table-remove {
+    color: rgb(170, 2, 2);
+    cursor: pointer;
+    -webkit-transform: scale(1.25);
+    -ms-transform: scale(1.25);
+    transform: scale(1.25);
+}
+
+td.IconDataCol {
+    padding-left: 0px;
+    padding-right: 0px;
+    width: 60px;
+}
+
+td.IconDataCol_X {
+    padding-left: 0px;
+    padding-right: 0px;
+    width: 20px;
+}
+
+td.StepTypeSelectCell {
+    padding: none;
+    padding-left: 5px;
+    padding-right: 0px;
+    padding-top: 12px;
+    padding-bottom: 12px;
+}
+
+.table-up {
+    color: rgb(0, 17, 255);
+    cursor: pointer;
+    -webkit-transform: scale(1.35);
+    -ms-transform: scale(1.35);
+    transform: scale(1.35);
+    margin-left: 15px;
+}
+
+.table-down {
+    color: rgb(0, 17, 255);
+    cursor: pointer;
+    -webkit-transform: scale(1.35);
+    -ms-transform: scale(1.35);
+    transform: scale(1.35);
+    margin-left: 15px;
+}
+
+.table-add {
+    color: #070;
+    cursor: pointer;
+    -webkit-transform: scale(1.35);
+    -ms-transform: scale(1.35);
+    transform: scale(1.35)
+}
+
+.hide {
+    display: none;
+}
+
+.ui-progressbar .ui-progressbar-value {
+    margin: 0px;
+}
+
+.ui-widget-header {
+    background-color: black;
+    color: white;
+    border: 1px solid white;
+}
+
+.ui-dialog {
+    padding: none;
+    padding-left: none;
+    padding-right: none;
+    padding-top: none;
+    padding-bottom: none;
+    background-color: black;
+}
+
+.ui-dialog-buttonpane {
+    background-color: black;
+    border: 2px solid white;
+    border-top: none;
+}
+
+#AccuFillInformationBox {
+    display: none;
+    background-color: black;
+    color: white;
+    border: 2px solid white;
+    border-top: none;
+}
+
+#SaveStepsAsDialogBox {
+    background-color: black;
+    color: white;
+    border: 2px solid white;
+    border-top: none;
+}
+
+#StepFileName {
+    color: white;
+    background-color: black;
+    border: none;
+    border-bottom: 1px solid white;
+}
+
+#AlertMessageBox {
+    color: white;
+    border: 2px solid white;
+    border-top: none;
+    border-bottom: none;
+}
+
+#HopsBossInformationBox {
+    display: none;
+    border: 2px solid white;
+    border-top: none;
+}
+
+#HopsBossInformationalParagraph {
+    color: white;
+}
+
+#HopsBossPopoverRow1 {
+    text-align: center;
+    margin-top: 10px;
+}
+
+#HopsBossPopoverRow1Col1 {}
+
+#HopsBoss_Home_Button {
+    cursor: pointer;
+    height: 40px;
+}
+
+#HopsBossPopoverRow2 {
+    text-align: center;
+    margin-top: 10px;
+}
+
+#HopsBossPopoverRow2Col1 {}
+
+#HopsBoss_6_Button {
+    cursor: pointer;
+    margin-left: 22px;
+    height: 40px;
+    width: 40px;
+}
+
+#HopsBossPopoverRow2Col2 {}
+
+#HopsBoss_1_Button {
+    cursor: pointer;
+    margin-left: -22px;
+    height: 40px;
+    width: 40px;
+}
+
+#HopsBossPopoverRow3 {
+    text-align: center;
+    margin-top: 10px;
+}
+
+#HopsBossPopoverRow3Col1 {}
+
+#HopsBoss_5_Button {
+    cursor: pointer;
+    height: 40px;
+    width: 40px;
+    margin-left: -15px;
+}
+
+#HopsBossPopoverRow3Col2 {}
+
+#HopsBoss_2_Button {
+    cursor: pointer;
+    height: 40px;
+    width: 40px;
+    margin-left: 15px;
+}
+
+#HopsBossPopoverRow4 {
+    text-align: center;
+    margin-top: 10px;
+}
+
+#HopsBossPopoverRow4Col1 {}
+
+#HopsBoss_4_Button {
+    margin-left: 65px;
+    cursor: pointer;
+    height: 40px;
+    width: 40px;
+}
+
+#HopsBossPopoverRow4Col2 {}
+
+#HopsBoss_3_Button {
+    margin-left: -65px;
+    cursor: pointer;
+    height: 40px;
+    width: 40px;
+}
+
+.HopsBossPositionButton {
+    background-color: #eac922;
+    border: 1px solid black;
+    border-radius: .25rem;
+}
+
+.ui-button {
+    background-color: #eac922;
+    border: 1px solid black;
+}
+
+#TimerStartButton {
+    background-color: #eac922;
+    border: 1px solid black;
+    margin-top: 8px;
+    height: 36px;
+    width: 85%;
+    cursor: pointer;
+}
+
+#TimerClearButton {
+    background-color: red;
+    border: 1px solid black;
+    margin-top: 8px;
+    height: 36px;
+    width: 85%;
+    cursor: pointer;
+}
+
+#TimerStartButtonRowC1 {
+    width: 50%;
+}
+
+#TimerClearButtonRowC2 {
+    width: 50%;
+}

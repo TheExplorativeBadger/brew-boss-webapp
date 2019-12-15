@@ -1,0 +1,1197 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=.97, maximum-scale=1" />
+    <title>BrewBossWebApp v4.0</title>
+    <!-- Bootsrap Core CSS -->
+    <link href="dependencies/bootstrap.min.css" rel="stylesheet" />
+    <!-- Open-Iconic CSS -->
+    <link href="dependencies/open-iconic.min.css" rel="stylesheet">
+    <!-- JQuery UI CSS -->
+    <link href="dependencies/jquery-ui.min.css" rel="stylesheet" />
+    <!-- Custom CSS -->
+    <link href="custom_css.css" rel="stylesheet" />
+</head>
+
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-lg navbar-dark" id="Main_Navbar">
+        <!-- Brand -->
+        <a class="navbar-brand">
+            <img id="BrewBossLogo" src="media/BBLogo.jpg" alt="Logo" style="width:150px;height:50px;cursor:default">
+        </a>
+        <!-- Toggler/collapsibe Button -->
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar_M">
+            <span class="navbar-toggler-icon" id="Main_Toggler"></span>
+        </button>
+        <!-- Navbar links -->
+        <div class="collapse navbar-collapse" id="collapsibleNavbar_M">
+            <ul class="navbar-nav">
+                <li class="nav-item" id="NavItemM1">
+                    <a class="nav-link" id="button_w1">Current Session</a>
+                </li>
+                <li class="nav-item" id="NavItemM2">
+                    <a class="nav-link" id="button_w2">Brewing Steps</a>
+                </li>
+                <li class="nav-item" id="NavItemM3">
+                    <a class="nav-link" id="button_w3">Settings</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <div id="AlertMessageBox" title="Info">
+        <p>
+            <span id="AlertMessageBoxText"></span>
+        </p>
+    </div>
+
+    <div id="AccuFillInformationBox" title="AccuFill">
+        <div class="row" id="AccuFillPopoverRow1">
+            <div class="col-lg-6" id="AccuFillPopoverRow1Col1">
+                <ul id="AccuFillPopoverListLeft">
+                    <li id="AccuFillStatusWindow">
+                        <span id="AccuFillStatusHeader">Status</span>
+                        </br>
+                        <span id="AccuFillStatusValue">Connected</span>
+                    </li>
+                    <li id="AccuFillVolumeFilledWindow">
+                        <span id="AccuFillVolumeFilledHeader">Volume Filled</span>
+                        </br>
+                        <span id="AccuFillVolumeFilledValue">0.00</span><span id="AccuFillVolumeFilledValueUnits"> G</span>
+                    </li>
+                </ul>
+            </div>
+            <div class="col-lg-6" id="AccuFillPopoverRow1Col2">
+                <ul id="AccuFillPopoverListRight">
+                    <li id="AccuFillCalibrationWindow">
+                        <span id="AccuFillCalibrationHeader">Calibration Val</span>
+                        </br>
+                        <span id="AccuFillCalibrationValue">0</span>
+                    </li>
+                    <li id="AccuFillDesiredFillVolumeWindow">
+                        <span id="AccuFillDesiredFillVolumeHeader">Target Volume</span>
+                        </br>
+                        <span id="AccuFillDesiredFillVolumeValue">0.00</span><span id="AccuFillDesiredFillVolumeValueUnits"> G</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="row" id="AccuFillPopoverRow2">
+            <div class="col-lg-6" id="AccuFillPopoverRow2Col1">
+                <input id="AccuFillChangeFillVolumeInput" name="AccuFillChangeFillVolumeInput" type="number" value="" placeholder="0.00" step=".1" min="0"></input><span id="AccuFillChangeFillVolumeInputUnits"> G</span>
+            </div>
+            <div class="col-lg-6" id="AccuFillPopoverRow2Col2">
+                <button id="AccuFillActionButton">Fill</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="HopsBossInformationBox" title="Hops-Boss">
+        <div class="row" id="HopsBossInformationalRow">
+            <div class="col-lg-12" id="HopsBossInformationalRowCol1">
+                <p id="HopsBossInformationalParagraph">
+                    The Hops-Boss is currently set to Position: <span id="HopsBossCurrentPosition">5</span>
+                    </br>
+                    To change the position manually, please select a button below. The position will change automatically when you are brewing.
+                </p>
+            </div>
+        </div>
+        <div class="row" id="HopsBossPopoverRow1">
+            <div class="col-lg-12" id="HopsBossPopoverRow1Col1">
+                <button id="HopsBoss_Home_Button" class="HopsBossPositionButton">Home</button>
+            </div>
+        </div>
+        <div class="row" id="HopsBossPopoverRow2">
+            <div class="col-lg-6" id="HopsBossPopoverRow2Col1">
+                <button id="HopsBoss_6_Button" class="HopsBossPositionButton">6</button>
+            </div>
+            <div class="col-lg-6" id="HopsBossPopoverRow2Col2">
+                <button id="HopsBoss_1_Button" class="HopsBossPositionButton">1</button>
+            </div>
+        </div>
+        <div class="row" id="HopsBossPopoverRow3">
+            <div class="col-lg-6" id="HopsBossPopoverRow3Col1">
+                <button id="HopsBoss_5_Button" class="HopsBossPositionButton">5</button>
+            </div>
+            <div class="col-lg-6" id="HopsBossPopoverRow3Col2">
+                <button id="HopsBoss_2_Button" class="HopsBossPositionButton">2</button>
+            </div>
+        </div>
+        <div class="row" id="HopsBossPopoverRow4">
+            <div class="col-lg-6" id="HopsBossPopoverRow4Col1">
+                <button id="HopsBoss_4_Button" class="HopsBossPositionButton">4</button>
+            </div>
+            <div class="col-lg-6" id="HopsBossPopoverRow4Col2">
+                <button id="HopsBoss_3_Button" class="HopsBossPositionButton">3</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="SaveStepsAsDialogBox" title="Save Steps As...">
+        <p class="SaveStepsAsDialogBoxDescription">Please provide a name for the Brew Steps file.</p>
+        <label for="StepFileName">File Name</label>
+        <input type="text" name="StepFileName" id="StepFileName" onClick="this.setSelectionRange(0, this.value.length)" value="" maxlength="17" placeholder="" class="text ui-widget-content ui-corner-all">
+    </div>
+
+    <audio id="AlarmAudio" src="media/silence.mp3" type="audio/mpeg"></audio>
+    <audio id="SilenceAudio" src="media/alarm.mp3" type="audio/mpeg"></audio>
+
+    <div class="container" id="Current_Brew_Session_Container">
+        <div class="row" id="Window_1_A">
+            <div class="col-lg-3" id="Window_1_A_1">
+                <h2 id="Current_Brew_Session_Container_Heading">Current Session</h2>
+            </div>
+            <div class="col-lg-9 text-left" id="Window_1_A_2">
+                <h4 id="Current_Brew_Session_Container_Prompt_Window">Loading.....</h4>
+            </div>
+        </div>
+        <div class="row" id="Window_1_B">
+            <!-- This is the left side 1/4 pane -->
+            <div class="col-lg-3" id="Window_1_B_1">
+                <!-- Controller Pane -->
+                <div class="row" id="Window_1_B_1_a">
+                    <div class="col-lg-12" id="Window_1_B_1_a_1">
+                        <h4 class="Stat_Header">
+                            Controller
+                        </h4>
+                        <h5 id="HeaterPowerDisplay">
+                            Heater Power:
+                            <input type="number" id="Heater_Power_Display" class="Pref_Number" value="0" min="0" max="100"></input><span id="Misc">%</span>
+                        </h5>
+                        <div id="Heater_Power_Slider"></div>
+                        <ul id="Controller_Button_List">
+                            <li id="Heater_Button">
+                                Heater:
+                                <div class="switch" id="Heater_Switch">
+                                    <label>
+                                            <input type="checkbox" id="Heater_Switch_Checkbox">
+                                            <span class="slider round" id="Heater_Switch_Slider"></span>
+                                    </label>
+                                </div>
+                                <span id="Override_Span">
+                                    Overridden
+                                </span>
+                            </li>
+                            <li id="Pump_Button">
+                                Pump:
+                                <div class="switch" id="Pump_Switch">
+                                    <label>
+                                            <input type="checkbox" id="Pump_Switch_Checkbox">
+                                            <span class="slider round" id="Pump_Switch_Slider"></span>
+                                    </label>
+                                </div>
+                            </li>
+                        </ul>
+                        <ul id="None_Accessory_List">
+
+                        </ul>
+                        <ul id="Hops_Boss_Accessory_List">
+                            Hops-Boss
+                            <button id="HopsBossPopoverButton" class="btn">></button>
+                            <div class="row" id="HopsBossPositionRow">
+
+                                <div class="col-lg-12" id="HopsBossPositionColumn">
+                                    <span id="Position_Span"> Position: </span><span id="HopsBossPosition">-</span>
+                                </div>
+                            </div>
+                        </ul>
+                        <ul id="AccuFill_Accessory_List">
+                            <span id="AccuFillStatus">AccuFill</span>
+                            <button class="btn" id="AccuFillPopoverButton">></button>
+                            <div class="row" id="AccuFillProgressBarRow">
+                                <div class="col-lg-9" id="AccuFillProgressBarColumn">
+                                    <div id="AccuFillProgressBar"></div>
+                                </div>
+                                <div class="col-lg-3" id="AccuFillInfoColumn">
+                                    <span id="AccuFillFillPercentage">0%</span>
+                                </div>
+                            </div>
+                        </ul>
+                    </div>
+                </div>
+                <!-- Brew Session Pane -->
+                <div class="row" id="Brew_Session_Header_Row">
+                    <div class="col-lg-12" id="Session_Header_Column">
+                        <h4 class="Stat_Header">
+                            Brew Session
+                        </h4>
+                    </div>
+                </div>
+                <div class="row" id="Window_1_B_1_b">
+                    <div class="col-lg-7" id="Window_1_B_1_b_1">
+                        <ul id="Brew_Session_List">
+                            <li>
+                                <div id="StepToStartDiv">
+                                    Step to Start:
+                                    </br>
+                                    <select id="Step_To_Start_Select">
+                                        <option value="none_selected">Choose...</option>
+                                    </select>
+                                </div>
+                                <div id="CurrentStepNumberDiv">
+                                    <span id="CurrentStepHeaderSpan">Current Step</span>
+                                    </br>
+                                    <span id="CurrentStepValueSpan">-</span>
+                                </div>
+
+                            </li>
+                        </ul>
+                        <button type="button" class="btn btn-success" id="Start_Brewing_Button">Start</button>
+                        <button type="button" class="btn btn-danger" id="Stop_Brewing_Button">Stop</button>
+                        <button type="button" class="btn" id="New_Graph_Button">New Chart</button>
+                    </div>
+                    <div class="col-lg-5" id="Window_1_B_1_b_2">
+                        <ul id="Brew_Stats_List">
+                            <li id="Elapsed_Brew_Time_Window">
+                                <span id="Elapsed_Brew_Time_Title">Brew Time:</span>
+                                </br>
+                                <span id="Elapsed_Brew_Time_Span">0 s</span>
+                            </li>
+                            <li id="Total_KWH_Used_Window">
+                                <span id="Total_KWH_Used_Title">KWH Used:</span>
+                                </br>
+                                <span id="Total_KWH_Used_Span">0</span>
+                            </li>
+                            <li id="Total_Brewing_Cost_Window">
+                                <span id="Total_Brewing_Cost_Title">Total Cost:</span>
+                                </br>
+                                <span id="Total_Brewing_Cost_Span">$0.00</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <!-- This is the right side 3/4 pane -->
+            <div class="col-lg-9" id="Window_1_B_2">
+                <!-- This is the top 1/3 or so - Stats Display -->
+                <div class="row" id="Gauges_Row">
+                    <div class="col-lg-6" id="Time_Remaining_Gauge_Window">
+                        <div id="Time_Remaining_Gauge">
+                            <h4 class="Stat_Header">
+                                Step Time Remaining
+                            </h4>
+                            <div class="row" id="Time_Remaining_Row">
+                                <div class="col-lg-12" id="Time_Remaining_Canvas_Div">
+                                    <div class="row" id="Time_Remaining_Header_Row">
+                                        <div class="col-lg-4" id="Hour_Column">
+                                            <span id="HR_Title_Span">HR</span>
+                                        </div>
+                                        <div class="col-lg-4" id="Min_Column">
+                                            <span id="MIN_Title_Span">MIN</span>
+                                        </div>
+                                        <div class="col-lg-4" id="Sec_Column">
+                                            <span id="SEC_Title_Span">SEC</span>
+                                        </div>
+                                    </div>
+                                    <div class="row" id="Time_Remaining_Value_Row">
+                                        <div class="col-lg-4" id="Hour_Value_Column">
+                                            <span id="HR_Value_Span">00</span>
+                                        </div>
+                                        <div class="col-lg-4" id="Min_Value_Column">
+                                            <span id="MIN_Value_Span">00</span>
+                                        </div>
+                                        <div class="col-lg-4" id="Sec_Value_Column">
+                                            <span id="SEC_Value_Span">00</span>
+                                        </div>
+                                    </div>
+                                    <div class="row" id="Time_Remaining_Select_Row">
+                                        <div class="col-lg-4" id="Hour_Select_Column">
+                                            <select id="Timer_Hour_Select">
+                                                <option value="none_selected">Hr...</option>
+                                                <option value="1">1</option>
+                                                <option value="2">2</option>
+                                                <option value="3">3</option>
+                                                <option value="4">4</option>
+                                                <option value="5">5</option>
+                                                <option value="6">6</option>
+                                                <option value="7">7</option>
+                                                <option value="8">8</option>
+                                                <option value="9">9</option>
+                                                <option value="10">10</option>
+                                                <option value="11">11</option>
+                                                <option value="12">12</option>
+                                                <option value="13">13</option>
+                                                <option value="14">14</option>
+                                                <option value="15">15</option>
+                                                <option value="16">16</option>
+                                                <option value="17">17</option>
+                                                <option value="18">18</option>
+                                                <option value="19">19</option>
+                                                <option value="20">20</option>
+                                                <option value="21">21</option>
+                                                <option value="22">22</option>
+                                                <option value="23">23</option>
+                                                <option value="24">24</option>
+                                                <option value="25">25</option>
+                                                <option value="26">26</option>
+                                                <option value="27">27</option>
+                                                <option value="28">28</option>
+                                                <option value="29">29</option>
+                                                <option value="30">30</option>
+                                                <option value="31">31</option>
+                                                <option value="32">32</option>
+                                                <option value="33">33</option>
+                                                <option value="34">34</option>
+                                                <option value="35">35</option>
+                                                <option value="36">36</option>
+                                                <option value="37">37</option>
+                                                <option value="38">38</option>
+                                                <option value="39">39</option>
+                                                <option value="40">40</option>
+                                                <option value="41">41</option>
+                                                <option value="42">42</option>
+                                                <option value="43">43</option>
+                                                <option value="44">44</option>
+                                                <option value="45">45</option>
+                                                <option value="46">46</option>
+                                                <option value="47">47</option>
+                                                <option value="48">48</option>
+                                            </select>
+                                        </div>
+                                        <div class="col-lg-4" id="Min_Select_Column">
+                                            <select id="Timer_Min_Select">
+                                                <option value="none_selected">Min...</option>
+                                                <option value="1">1</option>
+                                                <option value="2">2</option>
+                                                <option value="3">3</option>
+                                                <option value="4">4</option>
+                                                <option value="5">5</option>
+                                                <option value="6">6</option>
+                                                <option value="7">7</option>
+                                                <option value="8">8</option>
+                                                <option value="9">9</option>
+                                                <option value="10">10</option>
+                                                <option value="11">11</option>
+                                                <option value="12">12</option>
+                                                <option value="13">13</option>
+                                                <option value="14">14</option>
+                                                <option value="15">15</option>
+                                                <option value="16">16</option>
+                                                <option value="17">17</option>
+                                                <option value="18">18</option>
+                                                <option value="19">19</option>
+                                                <option value="20">20</option>
+                                                <option value="21">21</option>
+                                                <option value="22">22</option>
+                                                <option value="23">23</option>
+                                                <option value="24">24</option>
+                                                <option value="25">25</option>
+                                                <option value="26">26</option>
+                                                <option value="27">27</option>
+                                                <option value="28">28</option>
+                                                <option value="29">29</option>
+                                                <option value="30">30</option>
+                                                <option value="31">31</option>
+                                                <option value="32">32</option>
+                                                <option value="33">33</option>
+                                                <option value="34">34</option>
+                                                <option value="35">35</option>
+                                                <option value="36">36</option>
+                                                <option value="37">37</option>
+                                                <option value="38">38</option>
+                                                <option value="39">39</option>
+                                                <option value="40">40</option>
+                                                <option value="41">41</option>
+                                                <option value="42">42</option>
+                                                <option value="43">43</option>
+                                                <option value="44">44</option>
+                                                <option value="45">45</option>
+                                                <option value="46">46</option>
+                                                <option value="47">47</option>
+                                                <option value="48">48</option>
+                                                <option value="49">49</option>
+                                                <option value="50">50</option>
+                                                <option value="51">51</option>
+                                                <option value="52">52</option>
+                                                <option value="53">53</option>
+                                                <option value="54">54</option>
+                                                <option value="55">55</option>
+                                                <option value="56">56</option>
+                                                <option value="57">57</option>
+                                                <option value="58">58</option>
+                                                <option value="59">59</option>
+                                            </select>
+                                        </div>
+                                        <div class="col-lg-4" id="Sec_Select_Column">
+                                            <select id="Timer_Sec_Select">
+                                                <option value="none_selected">Sec...</option>
+                                                <option value="1">1</option>
+                                                <option value="2">2</option>
+                                                <option value="3">3</option>
+                                                <option value="4">4</option>
+                                                <option value="5">5</option>
+                                                <option value="6">6</option>
+                                                <option value="7">7</option>
+                                                <option value="8">8</option>
+                                                <option value="9">9</option>
+                                                <option value="10">10</option>
+                                                <option value="11">11</option>
+                                                <option value="12">12</option>
+                                                <option value="13">13</option>
+                                                <option value="14">14</option>
+                                                <option value="15">15</option>
+                                                <option value="16">16</option>
+                                                <option value="17">17</option>
+                                                <option value="18">18</option>
+                                                <option value="19">19</option>
+                                                <option value="20">20</option>
+                                                <option value="21">21</option>
+                                                <option value="22">22</option>
+                                                <option value="23">23</option>
+                                                <option value="24">24</option>
+                                                <option value="25">25</option>
+                                                <option value="26">26</option>
+                                                <option value="27">27</option>
+                                                <option value="28">28</option>
+                                                <option value="29">29</option>
+                                                <option value="30">30</option>
+                                                <option value="31">31</option>
+                                                <option value="32">32</option>
+                                                <option value="33">33</option>
+                                                <option value="34">34</option>
+                                                <option value="35">35</option>
+                                                <option value="36">36</option>
+                                                <option value="37">37</option>
+                                                <option value="38">38</option>
+                                                <option value="39">39</option>
+                                                <option value="40">40</option>
+                                                <option value="41">41</option>
+                                                <option value="42">42</option>
+                                                <option value="43">43</option>
+                                                <option value="44">44</option>
+                                                <option value="45">45</option>
+                                                <option value="46">46</option>
+                                                <option value="47">47</option>
+                                                <option value="48">48</option>
+                                                <option value="49">49</option>
+                                                <option value="50">50</option>
+                                                <option value="51">51</option>
+                                                <option value="52">52</option>
+                                                <option value="53">53</option>
+                                                <option value="54">54</option>
+                                                <option value="55">55</option>
+                                                <option value="56">56</option>
+                                                <option value="57">57</option>
+                                                <option value="58">58</option>
+                                                <option value="59">59</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="row" id="TimerStartButtonRow">
+                                        <div class="col-lg-6" id="TimerStartButtonRowC1">
+                                            <button id="TimerStartButton" class="btn">Start Timer</button>
+                                        </div>
+                                        <div class="col-lg-6" id="TimerClearButtonRowC2">
+                                            <button id="TimerClearButton" class="btn">Clear Timer</button>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="col-lg-6" id="Temperature_Gauge_Window">
+                        <div id="Temperature_Gauge">
+                            <h4 class="Stat_Header">
+                                Current Temperature
+                            </h4>
+                            <div class="row" id="Temperature_Row">
+                                <div class="col-lg-8" id="Temperature_Canvas_Div">
+                                    <canvas id="Temperature_Canvas"></canvas>
+                                </div>
+                                <div class="col-lg-4" id="Temperature_Side_Options">
+                                    <ul id="Temperature_List">
+                                        <li>
+                                            <span id="Current_Temperature">-</span>
+                                        </li>
+                                        <li id="Target_Temp_List_Item">
+                                            Target:
+                                            </br>
+                                            <select id="Target_Temperature_Select">
+                                                <option value="none_selected">Choose...</option>
+                                            </select>
+                                            </br>
+                                            <button id="ClearTargetTempButton" class="btn">Clear Target</button>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+                <!-- This is the bottom 2/3 - Graph -->
+                <div class="row" id="Window_1_B_2_b">
+                    <div class="col-lg-12" id="Window_1_B_2_b_1">
+                        <div class="chart_container" id="Chart_Container">
+                            <canvas id="Temperature_Chart"></canvas>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Brewing Steps Container -->
+    <div class="container" id="Brewing_Steps_Container">
+        <div class="row" id="Window_2_A">
+            <div class="col-lg-3" id="Window_2_A_1">
+                <h2 id="Brewing_Steps_Heading">Brewing Steps</h2>
+                <p id="Brew_Steps_Description">
+                    The steps in the Step Table shown are loaded from the Brew-Boss Controller memory. You can see the default step file in the Settings tab.</br>
+                    </br>
+                    Current step file: <span id="Current_Step_File"></span></br>
+                    </br>
+                    - Use the + Icon to add a new row to the bottom of the table</br>
+                    - Use the x Icon in a row to delete that row from the table</br>
+                    - Use the Up Arrow in a row to shift the row up one spot in the table</br>
+                    - Use the Down Arrow in a row to shift the row down one spot in the table</br>
+                </p>
+                <p id="Import_BeerXML_Description">
+                    Select a Beer.xml file from your file system to import as a steps file for this app.
+                </p>
+                <form id="BeerXMLForm" name="BeerXMLForm">
+                    <input type="file" name="Import_BeerXML_File" id="Import_BeerXML_File" accept=".xml"></input>
+                    </br>
+                    <input class="btn" type="button" id="Import_BeerXML_Button" value="Import" />
+                </form>
+                <p id="Brew_Steps_Save_Description">
+                    To save any changes you have made to the currently displayed step file, please use the 'Save Steps' button directly below. *Notice: Saving any changes will overwrite the previous version of the step file.
+                </p>
+                <button type="button" class="btn" id="Save_Steps_Button">Save Steps</button>
+                <p id="Brew_Steps_SaveAs_Description">
+                    To save an edited step file as a new step file, please enter a name for the file on the line directly below, then use the 'Save Steps As...' button. This will create a new file that can be loaded in the future. This action will leave the previous file
+                    unchanged.
+                </p>
+                <button type="button" class="btn" id="SaveAs_Steps_Button">Save Steps As...</button>
+
+                <p id="Brew_Steps_Load_Description">
+                    The Brew-Boss Controller contains all of your previously saved step files. If you would like to load a step file, please use the dropdown list directly below to select a file from the list, then click the 'Load Steps' button.
+                </p>
+                <select id="Load_Steps_File_List">
+                    <option value="none_selected">Select a File...</option>
+                </select></br>
+                <button type="button" class="btn" id="Load_Steps_Button">Load Steps</button>
+
+                <p id="Brew_Steps_Delete_Description">
+                    To delete a file from those you have previously saved, please select a file from the list, and click the 'Delete File' button below. Deleting a file cannot be undone.
+                </p>
+                <select id="Delete_Steps_File_List">
+                    <option value="none_selected">Select a File...</option>
+                </select></br>
+                <button type="button" class="btn btn-danger" id="Delete_Steps_Button">Delete File</button>
+            </div>
+            <div class="col-lg-9" id="Window_2_A_2">
+                <div id="table" class="table-editable">
+                    <table class="table" id="Brewing_Steps_Table">
+                        <tbody>
+                            <tr>
+                                <th title="This is a number from 1 to 5 indicating the step type as defined below. Type 1 – Prompt User with User Confirmation Required. Type 2 – Prompt User Without Confirmation Type 3 – Heat Kettle to Specified Setpoint
+                                    Type 4 – Maintain Temperature for Specified Time Type 5 – Cool Kettle to Specified Setpoint Type 6 - Fill Kettle with AccuFill">
+                                    Step Type
+                                </th>
+                                <th title="This is the text that will be displayed by the application to identify to the user what step is being executed. It is also the prompt that will be verbally enunciated if the TTS option is enabled for that step.
+                                    Note: The Prompt parameter cannot include any commas or quotation marks!">Prompt</th>
+                                <th title="This is the temperature that the controller should heat to and/or maintain for the step being defined. Enter zero if the heater is not required for the step being defined. Temperatures must be in the same units
+                                    as is defined in the system parameters.">Setpoint <span id="SetpointUnits">(°F)</span></th>
+                                <th title="This is the time for this step and only applies to step type 4 as that is the only step that incorporates a timer. The time should be entered in minutes. So 1.5 hours would be 90 minutes.">Timer (Min.)</th>
+                                <th title="This is the volume to be filled via AccuFill for this step">Fill Vol. <span id="FillVolUnits">(G)</span></th>
+                                <th title="This parameter is used when the Optional Hops Boss® automatic hops feeder is installed. This tells the controller which hops positions (0-7) to dispense to the kettle, where position 0 is home. Values entered
+                                    for the hops feeder must be sequential. Set this parameter to 0 if the hops feeder is not installed.">Hops Pos</th>
+                                <th title="This parameter tells the controller that we are trying to boil the contents of the kettle and is only used for step types 3 and 4.">Boil Flag</th>
+                                <th title="This parameter tells the controller that you want the pump turned on for the step. Setting it to 1 turns the pump on when the step begins. Setting it to 0 forces the pump off.">Pump Flag</th>
+                                <th title="This parameter tells the controller that you want the Prompt parameter described above to be verbally enunciated by the controller. The controller will “read” the text you defined in the Prompt field. Setting
+                                    this parameter to 1 enables text speech output for that step and setting to 0 does not use speech.">Speak</th>
+                                <th title="This parameter tells the controller to sound an alarm to alert the user. Setting to 1 enables the alarm and 0 disables the alarm for the current step. If you have entered an e-mail address and are connected
+                                    to a local network with internet service, the system will also send an e-mail when the alarm is triggered.">Alarm Flag</th>
+                                <th></th>
+                                <th><span class="table-add oi oi-plus"></span></th>
+                            </tr>
+                            <!-- This is our clonable table line -->
+                            <tr class="hide">
+                                <td class="StepTypeSelectCell">
+                                    <select class="StepTypeSelect">
+                                        <option value="none_selected" selected="selected">-</option>
+                                        <option value="1">1 - Prompt User with User Confirmation Required</option>
+                                        <option value="2">2 - Prompt User Without Confirmation</option>
+                                        <option value="3">3 - Heat Kettle to Specified Setpoint</option>
+                                        <option value="4">4 - Maintain Temperature for Specified Time</option>
+                                        <option value="5">5 - Cool Kettle to Specified Setpoint</option>
+                                        <option value="6">6 - Fill Kettle with AccuFill</option>
+                                        <!--<option value="7">7</option>-->
+                                    </select>
+                                </td>
+                                <td contenteditable="true">Prompt</td>
+                                <!-- Step Setpoint -->
+                                <td contenteditable="true">
+                                    <select class="SetpointSelect">
+                                        <option value="0" selected="selected">0</option>
+                                    </select>
+                                </td>
+                                <!--Step Timer-->
+                                <td contenteditable="true">
+                                    <select class="StepTimerSelect">
+                                        <option value="0" selected="selected">-</option>
+                                        <option value="1">1</option>
+                                        <option value="2">2</option>
+                                        <option value="3">3</option>
+                                        <option value="4">4</option>
+                                        <option value="5">5</option>
+                                        <option value="6">6</option>
+                                        <option value="7">7</option>
+                                        <option value="8">8</option>
+                                        <option value="9">9</option>
+                                        <option value="10">10</option>
+                                        <option value="11">11</option>
+                                        <option value="12">12</option>
+                                        <option value="13">13</option>
+                                        <option value="14">14</option>
+                                        <option value="15">15</option>
+                                        <option value="16">16</option>
+                                        <option value="17">17</option>
+                                        <option value="18">18</option>
+                                        <option value="19">19</option>
+                                        <option value="20">20</option>
+                                        <option value="21">21</option>
+                                        <option value="22">22</option>
+                                        <option value="23">23</option>
+                                        <option value="24">24</option>
+                                        <option value="25">25</option>
+                                        <option value="26">26</option>
+                                        <option value="27">27</option>
+                                        <option value="28">28</option>
+                                        <option value="29">29</option>
+                                        <option value="30">30</option>
+                                        <option value="31">31</option>
+                                        <option value="32">32</option>
+                                        <option value="33">33</option>
+                                        <option value="34">34</option>
+                                        <option value="35">35</option>
+                                        <option value="36">36</option>
+                                        <option value="37">37</option>
+                                        <option value="38">38</option>
+                                        <option value="39">39</option>
+                                        <option value="40">40</option>
+                                        <option value="41">41</option>
+                                        <option value="42">42</option>
+                                        <option value="43">43</option>
+                                        <option value="44">44</option>
+                                        <option value="45">45</option>
+                                        <option value="46">46</option>
+                                        <option value="47">47</option>
+                                        <option value="48">48</option>
+                                        <option value="49">49</option>
+                                        <option value="50">50</option>
+                                        <option value="51">51</option>
+                                        <option value="52">52</option>
+                                        <option value="53">53</option>
+                                        <option value="54">54</option>
+                                        <option value="55">55</option>
+                                        <option value="56">56</option>
+                                        <option value="57">57</option>
+                                        <option value="58">58</option>
+                                        <option value="59">59</option>
+                                        <option value="60">60</option>
+                                        <option value="61">61</option>
+                                        <option value="62">62</option>
+                                        <option value="63">63</option>
+                                        <option value="64">64</option>
+                                        <option value="65">65</option>
+                                        <option value="66">66</option>
+                                        <option value="67">67</option>
+                                        <option value="68">68</option>
+                                        <option value="69">69</option>
+                                        <option value="70">70</option>
+                                        <option value="71">71</option>
+                                        <option value="72">72</option>
+                                        <option value="73">73</option>
+                                        <option value="74">74</option>
+                                        <option value="75">75</option>
+                                        <option value="76">76</option>
+                                        <option value="77">77</option>
+                                        <option value="78">78</option>
+                                        <option value="79">79</option>
+                                        <option value="80">80</option>
+                                        <option value="81">81</option>
+                                        <option value="82">82</option>
+                                        <option value="83">83</option>
+                                        <option value="84">84</option>
+                                        <option value="85">85</option>
+                                        <option value="86">86</option>
+                                        <option value="87">97</option>
+                                        <option value="88">88</option>
+                                        <option value="89">89</option>
+                                        <option value="90">90</option>
+                                        <option value="91">91</option>
+                                        <option value="92">92</option>
+                                        <option value="93">93</option>
+                                        <option value="94">94</option>
+                                        <option value="95">95</option>
+                                        <option value="96">96</option>
+                                        <option value="97">97</option>
+                                        <option value="98">98</option>
+                                        <option value="99">99</option>
+                                        <option value="100">100</option>
+                                        <option value="101">101</option>
+                                        <option value="102">102</option>
+                                        <option value="103">103</option>
+                                        <option value="104">104</option>
+                                        <option value="105">105</option>
+                                        <option value="106">106</option>
+                                        <option value="107">107</option>
+                                        <option value="108">108</option>
+                                        <option value="109">109</option>
+                                        <option value="110">110</option>
+                                        <option value="111">111</option>
+                                        <option value="112">112</option>
+                                        <option value="113">113</option>
+                                        <option value="114">114</option>
+                                        <option value="115">115</option>
+                                        <option value="116">116</option>
+                                        <option value="117">117</option>
+                                        <option value="118">118</option>
+                                        <option value="119">119</option>
+                                        <option value="120">120</option>
+                                        <option value="121">121</option>
+                                        <option value="122">122</option>
+                                        <option value="123">123</option>
+                                        <option value="124">124</option>
+                                        <option value="125">125</option>
+                                        <option value="126">126</option>
+                                        <option value="127">127</option>
+                                        <option value="128">128</option>
+                                        <option value="129">129</option>
+                                        <option value="130">130</option>
+                                        <option value="131">131</option>
+                                        <option value="132">132</option>
+                                        <option value="133">133</option>
+                                        <option value="134">134</option>
+                                        <option value="135">135</option>
+                                        <option value="136">136</option>
+                                        <option value="137">137</option>
+                                        <option value="138">138</option>
+                                        <option value="139">139</option>
+                                        <option value="140">140</option>
+                                        <option value="141">141</option>
+                                        <option value="142">142</option>
+                                        <option value="143">143</option>
+                                        <option value="144">144</option>
+                                        <option value="145">145</option>
+                                        <option value="146">146</option>
+                                        <option value="147">147</option>
+                                        <option value="148">148</option>
+                                        <option value="149">149</option>
+                                        <option value="150">150</option>
+                                        <option value="151">151</option>
+                                        <option value="152">152</option>
+                                        <option value="153">153</option>
+                                        <option value="154">154</option>
+                                        <option value="155">155</option>
+                                        <option value="156">156</option>
+                                        <option value="157">157</option>
+                                        <option value="158">158</option>
+                                        <option value="159">159</option>
+                                        <option value="160">160</option>
+                                        <option value="161">161</option>
+                                        <option value="162">162</option>
+                                        <option value="163">163</option>
+                                        <option value="164">164</option>
+                                        <option value="165">165</option>
+                                        <option value="166">166</option>
+                                        <option value="167">167</option>
+                                        <option value="168">168</option>
+                                        <option value="169">169</option>
+                                        <option value="170">170</option>
+                                        <option value="171">171</option>
+                                        <option value="172">172</option>
+                                        <option value="173">173</option>
+                                        <option value="174">174</option>
+                                        <option value="175">175</option>
+                                        <option value="176">176</option>
+                                        <option value="177">177</option>
+                                        <option value="178">178</option>
+                                        <option value="179">179</option>
+                                        <option value="180">180</option>
+                                    </select>
+                                </td>
+                                <td contenteditable="true">0</td>
+                                <td>
+                                    <select class="HopsPosSelect">
+                                        <option value="none_selected" selected="selected">-</option>
+                                        <option value="0">Home</option>
+                                        <option value="1">1</option>
+                                        <option value="2">2</option>
+                                        <option value="3">3</option>
+                                        <option value="4">4</option>
+                                        <option value="5">5</option>
+                                        <option value="6">6</option>
+                                    </select>
+                                </td>
+                                <td><input type="checkbox" name="BoilFlagCheckbox" class="BrewStepsCheckbox" /></td>
+                                <td><input type="checkbox" name="PumpFlagCheckbox" class="BrewStepsCheckbox" /></td>
+                                <td><input type="checkbox" name="SpeakFlagCheckbox" class="BrewStepsCheckbox" /></td>
+                                <td><input type="checkbox" name="AlarmFlagCheckbox" class="BrewStepsCheckbox" /></td>
+                                <td class="IconDataCol_X"><span class="table-remove oi oi-x"></span></td>
+                                <td class="IconDataCol"><span class="table-up oi oi-arrow-thick-top"></span><span class="table-down oi oi-arrow-thick-bottom"></span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Settings Container -->
+    <div class="container" id="Settings_Container">
+        <nav class="navbar navbar-expand-lg navbar-dark" id="Preferences_Navbar">
+            <!-- Brand -->
+            <a id="Pref_Navbar_Brand" class="navbar-brand" style="color:yellow;cursor:default;font-size:2rem">Settings</a>
+            <!-- Toggler/collapsibe Button -->
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar_S">
+                <span class="navbar-toggler-icon" id="Preferences_Toggler"></span>
+            </button>
+            <!-- Navbar links -->
+            <div class="collapse navbar-collapse justify-content-end" id="collapsibleNavbar_S">
+                <ul class="navbar-nav">
+                    <li class="nav-item" id="NavItemS1">
+                        <a class="nav-link" id="button_s1">General</a>
+                    </li>
+                    <li class="nav-item" id="NavItemS2">
+                        <a class="nav-link" id="button_s2">Heater / Power</a>
+                    </li>
+                    <li class="nav-item" id="NavItemS3">
+                        <a class="nav-link" id="button_s4">Color / Sound</a>
+                    </li>
+                    <li class="nav-item" id="NavItemS4">
+                        <a class="nav-link" id="button_s5">Graph</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+        <div class="row" id="Window_3_A">
+            <div class="col-lg-3" id="Window_3_A_1">
+                <p id="Save_Settings_Description">
+                    Settings are saved to / loaded from the Brew-Boss Controller.
+                    </br>
+                    </br>
+                    The Reset Default Settings button can be used to reset ALL settings back to their original values.
+                </p>
+                <button type="button" class="btn btn-secondary" id="Save_Settings_Button">Save Settings</button>
+                </br>
+                <button type="button" class="btn btn-secondary" id="Reset_Default_Settings_Button">Reset Default Settings</button>
+            </div>
+            <div class="col-lg-9" id="Window_3_A_2_a">
+                <h3 class="Sub_Setting_Heading" id="General_Heading">General</h3>
+                <ul id="General_Pref_List" class="Settings_List">
+                    <li>
+                        Default Step File: <span id="DefaultStepFile" value=""></span>
+                        <p id="Default_Step_File_Preference_Description" class="Setting_Description">
+                            The step file that will be loaded on app startup
+                        </p>
+                    </li>
+                    <li>
+                        Temperature Units:
+                        <input id="Temp_F_Radio" class="TempUnitsRadio" type="radio" name="temp_units" value="F" checked><span id="F_Value"> F</span></input>
+                        <input id="Temp_C_Radio" class="TempUnitsRadio" type="radio" name="temp_units" value="C"><span id="C_Value"> C</span></input>
+                        </br>
+                        <p id="Temperature_Units_Preference_Description" class="Setting_Description">
+                            Choose the temperature units you would like to use for this app
+                        </p>
+                    </li>
+                    <!--
+                    <li>
+                        Receive Email Alerts: <input type="checkbox" id="Data_Sharing_Checkbox" class="Settings_Checkbox" name="Data_Sharing_Checkbox" />
+                        <p id="Data_Sharing_Checkbox_Description" class="Setting_Description">
+                            Receive an email for important session steps that have 'Alarm Flag' checked
+                        </p>
+                    </li>
+                    <li>
+                        Email Address: <input id="UserEmail" name="UserEmail" size="30" type="text" value="" placeholder="Your Email..." />
+                        <p id="UserEmail_Description" class="Setting_Description">
+                            Provide an email address to receive alerts
+                        </p>
+                    </li>
+                -->
+                    <li>
+                        Heater Watts: <input id="Heater_Watts" name="Heater_Watts" class="Pref_Number" type="number" size="5" maxlength="3" value="0"></input>
+                        </br>
+                        <p id="Heater_Watts_Description" class="Setting_Description">
+                            Used to generate Brewing Session data
+                        </p>
+                    </li>
+                    <li>
+                        Cost / KW Hour ($) : <input id="CPKWH" name="CPKWH" class="Pref_Number" type="number" size="5" maxlength="3" value="0"></input>
+                        </br>
+                        <p id="CPKWH_Description" class="Setting_Description">
+                            Used to generate Brewing Session data
+                        </p>
+                    </li>
+                </ul>
+
+                <div class="accordion" id="BeerXMLImportAccordian">
+                    <div class="card" id="BeerXMLImportCard">
+                        <div class="card-header" id="BeerXMLImportCardHeader">
+                            <h2 class="mb-0" id="BeerXMLImportFiller">
+                                <button class="btn" id="BeerXMLImportButton" type="button" data-toggle="collapse" data-target="#BeerXMLImportCollapse" aria-expanded="true" aria-controls="BeerXMLImportCollapse">
+                                Beer.xml Import Options
+                          </button>
+                            </h2>
+                        </div>
+
+                        <div id="BeerXMLImportCollapse" class="collapse" aria-labelledby="BeerXMLImportCardHeader" data-parent="#BeerXMLImportAccordian">
+                            <div class="card-body" id="BeerXMLImportCardBody">
+                                <ul id="BeerXMLImportPrefList" class="Settings_List">
+                                    <li>
+                                        Enable AccuFill: <input type="checkbox" class="Settings_Checkbox" id="AccuFill_Enabled" name="AccuFill_Enabled" value="no"></input>
+                                        </br>
+                                        <p id="Enable_AccuFill_Description" class="Setting_Description">
+                                            Enable this to automate filling when importing Beer.xml
+                                        </p>
+                                    </li>
+                                    <li>
+                                        Initial AccuFill Fill Volume: <input id="Accufill_Initial_Fill_Volume" name="Accufill_Initial_Fill_Volume" class="Pref_Number" type="number" value="0"></input>
+                                        </br>
+                                        <p id="Accufill_Initial_Fill_Volume_Description" class="Setting_Description">
+                                            The volume of water (in liters) to initially fill AccuFill with
+                                        </p>
+                                    </li>
+                                    <li>
+                                        Enable Hops Boss Feeder: <input type="checkbox" class="Settings_Checkbox" id="Enable_HBC" name="Enable_HBC" value="no">
+                                        </br>
+                                        <p id="Enable_HBC_Description" class="Setting_Description">
+                                            Enable this to automate the hops additions when importing Beer.xml
+                                        </p>
+                                    </li>
+                                    <li>
+                                        Mortar Shell Cup Capacity (oz): <input id="HBMSCC" name="HBMSCC" class="Pref_Number" type="number" value="16"></input>
+                                        </br>
+                                        <p id="HBMSCC_Description" class="Setting_Description">
+                                            The volume (in ounces) of the Hops-Boss Mortar Shell Cup
+                                        </p>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-9" id="Window_3_A_2_b">
+                <h3 class="Sub_Setting_Heading" id="Heater_Heading">Power</h3>
+                <ul id="Window_b_List" class="Settings_List">
+                    <li>
+                        Maximum Heater Power: <input id="MaximumHeaterPower" name="MaximumHeaterPower" class="Pref_Number" type="number" size="5" maxlength="3" value="0"></input>
+                        </br>
+                        <p id="MaximumHeaterPower_Description" class="Setting_Description">
+                            When the heater is set to Max, this value will overwrite 100%
+                        </p>
+                    </li>
+                    <li>
+                        Boil Detect Time: <input id="BoilDetectTime" name="BoilDetectTime" class="Pref_Number" type="number" size="5" maxlength="3" value="0"></input>
+                        </br>
+                        <p id="BoilDetectTime_Description" class="Setting_Description">
+                            Time in seconds required to hold boil temp. Must be greater than 45 seconds
+                        </p>
+                    </li>
+                    <li>
+                        Delta_T1: <input id="DeltaT1" name="DeltaT1" class="Pref_Number" type="number" size="5" maxlength="3" value="0"></input>
+                        </br>
+                        <p id="DeltaT1_Description" class="Setting_Description">
+                            Number of degrees below Setpoint where Heater goes to PwrS
+                        </p>
+                    </li>
+                    <li>
+                        Delta_T2: <input id="DeltaT2" name="DeltaT2" class="Pref_Number" type="number" size="5" maxlength="3" value="0"></input>
+                        </br>
+                        <p id="DeltaT2_Description" class="Setting_Description">
+                            Number of degrees below Setpoint where Heater goes to PwrL
+                        </p>
+                    </li>
+                    <li>
+                        PwrS: <input id="PwrS" name="PwrS" class="Pref_Number" type="number" size="5" maxlength="3" value="0"></input>
+                        </br>
+                        <p id="PwrS_Description" class="Setting_Description">
+                            Heater Power % to use within DeltaT1 degrees of Setpoint
+                        </p>
+                    </li>
+                    <li>
+                        PwrL: <input id="PwrL" name="PwrL" class="Pref_Number" type="number" size="5" maxlength="3" value="0"></input>
+                        </br>
+                        <p id="PwrL_Description" class="Setting_Description">
+                            Heater Power % to use within DeltaT2 degrees of Setpoint
+                        </p>
+                    </li>
+                    <li>
+                        PwrM: <input id="PwrM" name="PwrM" class="Pref_Number" type="number" size="5" maxlength="3" value="0"></input>
+                        </br>
+                        <p id="PwrM_Description" class="Setting_Description">
+                            Heater Power % to use while maintaining temperature
+                        </p>
+                    </li>
+                    <li>
+                        PwrB: <input id="PwrB" name="PwrB" class="Pref_Number" type="number" size="5" maxlength="3" value="0"></input>
+                        </br>
+                        <p id="PwrB_Description" class="Setting_Description">
+                            Heater Power % to use while boiling
+                        </p>
+                    </li>
+                </ul>
+            </div>
+            <div class="col-lg-9" id="Window_3_A_2_d">
+                <div class="row" id="Window_3_A_2_f_1">
+                    <div class="col-lg-6" id="Window_3_A_2_f_1_a">
+                        <h3 id="Page_Colors_Header" class="Sub_Setting_Heading">Color</h3>
+                        <ul id="Page_Colors_List" class="Settings_List">
+                            <li>
+                                Primary Borders: <input id="Border_Primary_Color" name="Border_Primary_Color" type="color" value="#800080"></input>
+                                </br>
+                                <p id="Border_Primary_Color_Description" class="Setting_Description">
+                                    Select a color to use for the primary border
+                                </p>
+                            </li>
+                            <li>
+                                Secondary Borders: <input id="Border_Secondary_Color" name="Border_Secondary_Color" type="color" value="#FFFFFF"></input>
+                                </br>
+                                <p id="Border_Secondary_Color_Description" class="Setting_Description">
+                                    Select a color to use for the border accent
+                                </p>
+                            </li>
+                            <li>
+                                Primary Text: <input id="Text_Primary_Color" name="Text_Primary_Color" type="color" value="#FFFF00"></input>
+                                </br>
+                                <p id="Text_Primary_Color_Description" class="Setting_Description">
+                                    Select a color to use for window headings
+                                </p>
+                            </li>
+                            <li>
+                                Accessory Text: <input id="Text_Secondary_Color" name="Text_Secondary_Color" type="color" value="#18ad67"></input>
+                                </br>
+                                <p id="Text_Secondary_Color_Description" class="Setting_Description">
+                                    Select a color to use for accessory text
+                                </p>
+                            </li>
+                            <li>
+                                Value Text: <input id="Text_Tertiary_Color" name="Text_Tertiary_Color" type="color" value="#FFFFFF"></input>
+                                </br>
+                                <p id="Text_Tertiary_Color_Description" class="Setting_Description">
+                                    Select a color to use for value text
+                                </p>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col-lg-6" id="Window_3_A_2_f_1_b">
+                        <h3 id="Sound" class="Sub_Setting_Heading">Sound</h3>
+                        <ul id="Sound_List" class="Settings_List">
+                            <li>
+                                Rate: <span id="Voice_Rate_Display">1</span>
+                                <div id="Voice_Rate_Slider"></div>
+                                <p id="Voice_Rate_Description" class="Setting_Description">
+                                    Choose your desired rate of speech for voice prompts
+                                </p>
+                            </li>
+                            <li>
+                                Pitch: <span id="Voice_Pitch_Display">1</span>
+                                <div id="Voice_Pitch_Slider"></div>
+                                <p id="Voice_Pitch_Description" class="Setting_Description">
+                                    Choose your desired pitch for voice prompts
+                                </p>
+                            </li>
+                            <!--
+                            <li>
+                                Voice:
+                                </br>
+                                <select id="Voice_Select" name="Voice_Select"></select>
+                                <p id="Voice_Description" class="Setting_Description">
+                                    Choose your desired voice for voice prompts
+                                </p>
+                            </li>
+                        -->
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-9" id="Window_3_A_2_e">
+                <div class="row" id="Window_3_A_2_g_1">
+                    <div class="col-lg-6" id="Window_3_A_2_g_1_a">
+                        <h3 id="Graph_Colors_Header" class="Sub_Setting_Heading">Graph Color</h3>
+                        <ul id="Graph_Colors_List" class="Settings_List">
+                            <li>
+                                Primary Axis: <input id="Graph_Axis_Primary_Color" name="Graph_Axis_Primary_Color" type="color" value="#000000"></input>
+                                </br>
+                                <p id="Graph_Axis_Primary_Color_Description" class="Setting_Description">
+                                    Select a color to use for the main X and Y axes
+                                </p>
+                            </li>
+                            <li>
+                                Data Line: <input id="Graph_Axis_Secondary_Color" name="Graph_Axis_Secondary_Color" type="color" value="#800080"></input>
+                                </br>
+                                <p id="Graph_Axis_Secondary_Color_Description" class="Setting_Description">
+                                    Select a color to use for the data line
+                                </p>
+                            </li>
+                            <li>
+                                Data Point: <input id="Graph_Text_Tertiary_Color" name="Graph_Text_Tertiary_Color" type="color" value="#FFFFFF"></input>
+                                </br>
+                                <p id="Graph_Text_Tertiary_Color_Description" class="Setting_Description">
+                                    Select a color to use for the data points
+                                </p>
+                            </li>
+                            <li>
+                                Primary Text: <input id="Graph_Text_Primary_Color" name="Graph_Text_Primary_Color" type="color" value="#FFFFFF"></input>
+                                </br>
+                                <p id="Graph_Text_Primary_Color_Description" class="Setting_Description">
+                                    Select a color to use for the graph & axis titles
+                                </p>
+                            </li>
+                            <li>
+                                Secondary Text: <input id="Graph_Text_Secondary_Color" name="Graph_Text_Secondary_Color" type="color" value="#FFFFFF"></input>
+                                </br>
+                                <p id="Graph_Text_Secondary_Color_Description" class="Setting_Description">
+                                    Select a color to use for axis value labels
+                                </p>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col-lg-6" id="Window_3_A_2_g_1_b">
+                        <h3 id="Graph_General_Header" class="Sub_Setting_Heading">Graph Options</h3>
+                        <ul id="Graph_General_Options_List" class="Settings_List">
+                            <li>
+                                Update Interval:
+                                <select id="Update_Interval_Select">
+                                    <option class="Update_Interval_Select_Option" value="0" selected>5 Seconds</option>
+                                    <option class="Update_Interval_Select_Option" value="1">10 Seconds</option>
+                                    <option class="Update_Interval_Select_Option" value="2">20 Seconds</option>
+                                    <option class="Update_Interval_Select_Option" value="3">30 Seconds</option>
+                                    <option class="Update_Interval_Select_Option" value="4">60 Seconds</option>
+                                </select>
+                                <p id="Update_Interval_Select_Description" class="Setting_Description">
+                                    Choose a seconds interval to update graph
+                                </p>
+                            </li>
+                            <li>
+                                <a id="Trigger_Me"></a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap and Core Javascipt
+    =============================================== -->
+    <!-- At the end of the document so the page loads faster -->
+    <script src="dependencies/jquery-3.3.1.min.js"></script>
+    <script src="dependencies/bootstrap.min.js"></script>
+    <script src="dependencies/gauge.min.js"></script>
+    <script src="dependencies/chart.min.js"></script>
+    <script src="dependencies/jquery-ui.min.js"></script>
+    <script src="custom_js.js"></script>
+</body>
+
+</html>
